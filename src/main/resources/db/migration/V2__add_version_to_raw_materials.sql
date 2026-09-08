@@ -1,0 +1,2 @@
+ALTER TABLE raw_materials
+    ADD COLUMN version BIGINT NOT NULL DEFAULT 0;

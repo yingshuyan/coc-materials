@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: coc-materials
+
+  data:
+    web:
+      pageable:
+        default-page-size: 25
+        max-page-size: 100
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/coc_materials
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+
+  web:
+    error:
+      include-stacktrace: never
+      include-message: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+  endpoint:
+    health:
+      show-details: never
